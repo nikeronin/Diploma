@@ -13,5 +13,6 @@ import static com.codeborne.selenide.Selenide.$;
 public class InputFieldTest {
 
     SelenideElement TextInput = $(By.name("text"));
+    private final FirstName FirstName_1 = new FirstName($(" mr-sm-2 form-control#firstName"));
 
 }
