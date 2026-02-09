@@ -13,6 +13,18 @@ import static com.codeborne.selenide.Selenide.$;
 public class InputFieldTest {
 
     SelenideElement TextInput = $(By.name("text"));
-    private final FirstName FirstName_1 = new FirstName($(" mr-sm-2 form-control#firstName"));
+    public FirstName firstNameField = new FirstName($("#firstName"));
 
+    @Step("Открыть страницу demoqa")
+    public InputFieldTest openPage() {
+        Selenide.open("https://demoqa.com/automation-practice-form");
+        return this;
+    }
+
+    @Step("Ввести данные в поле FirstName")
+    public InputFieldTest setFirstName(String text) {
+        firstNameField.click();  // Клик по нужному полю
+        firstNameField.setValue(text);  // Ввод текста в то же поле
+        return this;
+    }
 }

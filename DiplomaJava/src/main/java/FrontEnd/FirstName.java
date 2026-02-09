@@ -1,5 +1,6 @@
 package FrontEnd;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 
 public class FirstName {
@@ -10,4 +11,12 @@ public class FirstName {
         this.firstNamefield = firstNamefield;
     }
 
+    public FirstName click() {
+        firstNamefield.shouldBe(Condition.exist);
+        firstNamefield.click();
+        return this;
+    }
+
+    public void setValue(String text) {
+    }
 }

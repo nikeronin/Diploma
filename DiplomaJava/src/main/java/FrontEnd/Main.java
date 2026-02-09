@@ -3,6 +3,7 @@ package FrontEnd;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 
 public class Main {
 
@@ -14,6 +15,12 @@ public class Main {
                 .screenshots(true)
         );
     }
+    @Test
+    void autotest () {
 
+        InputFieldTest.openPage()
+                .setFirstName("Никита");
+                //.verifyRedIconIsDisplayed();
+    }
 
 }
