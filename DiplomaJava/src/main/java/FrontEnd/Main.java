@@ -20,7 +20,9 @@ public class Main {
 
         InputFieldTest.openPage()
                 .setFirstName("Никита");
-                //.verifyRedIconIsDisplayed();
+        InputFieldTest.setLastName("Еронин");
+        InputFieldTest.setEmail("eronin.crm@yandex.ru");
+
     }
 
 }

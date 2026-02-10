@@ -7,16 +7,16 @@ public class FirstName {
 
     SelenideElement firstNamefield;
 
-    public FirstName(SelenideElement firstNamefield) {
-        this.firstNamefield = firstNamefield;
+    public FirstName(SelenideElement firstNameField) {
+        this.firstNamefield = firstNameField;
     }
 
-    public FirstName click() {
+    public void click() {
         firstNamefield.shouldBe(Condition.exist);
         firstNamefield.click();
-        return this;
     }
 
     public void setValue(String text) {
+        firstNamefield.setValue(text);
     }
 }
