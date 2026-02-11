@@ -3,22 +3,22 @@ package FrontEnd;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 
-public class Email {
+public class Subjects {
 
-    SelenideElement emailfield;
+    SelenideElement subjectfield;
 
-    public Email(SelenideElement emailField) {
-        this.emailfield = emailField;
+    public Subjects(SelenideElement subjectField) {
+        this.subjectfield = subjectField;
     }
 
     public void click() {
-        emailfield.shouldBe(Condition.exist);
-        emailfield.click();
+        subjectfield.shouldBe(Condition.exist);
+        subjectfield.click();
     }
 
     public void setValue(String text) {
         System.out.println("Устанавливаем значение: " + text);
-        emailfield.setValue(text);
+        subjectfield.setValue(text);
     }
 
 }

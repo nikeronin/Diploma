@@ -22,6 +22,8 @@ public class Main {
                 .setFirstName("Никита");
         InputFieldTest.setLastName("Еронин");
         InputFieldTest.setEmail("eronin.crm@yandex.ru");
+        InputFieldTest.setMobile("89504543762");
+        InputFieldTest.setSubjects("Math, Biology, English, Geography");
 
     }
 

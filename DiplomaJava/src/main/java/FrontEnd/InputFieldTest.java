@@ -16,6 +16,8 @@ public class InputFieldTest {
     public FirstName firstNameField = new FirstName($("#firstName"));
     public LastName lastNamefield = new LastName($("#lastName"));
     public Email emailfield = new Email($("#userEmail"));
+    public Mobile mobilefield = new Mobile($("#userNumber"));
+    public Subjects subjectfield = new Subjects($("#subjectsInput"));
 
     @Step("Открыть страницу demoqa")
     public InputFieldTest openPage() {
@@ -41,6 +43,20 @@ public class InputFieldTest {
     public InputFieldTest setEmail(String text) {
         emailfield.click();  // Клик по нужному полю
         emailfield.setValue(text);  // Ввод текста в то же поле
+        return this;
+    }
+
+    @Step("Ввести данные в поле Mobile")
+    public InputFieldTest setMobile(String value) {
+        mobilefield.click();  // Клик по нужному полю
+        mobilefield.setValue(value);  // Ввод текста в то же поле
+        return this;
+    }
+
+    @Step("Ввести данные в поле Subjects")
+    public InputFieldTest setSubjects(String text) {
+        subjectfield.click();  // Клик по нужному полю
+        subjectfield.setValue(text);  // Ввод текста в то же поле
         return this;
     }
 

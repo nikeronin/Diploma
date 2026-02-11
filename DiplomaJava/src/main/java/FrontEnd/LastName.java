@@ -17,6 +17,7 @@ public class LastName {
     }
 
     public void setValue(String text) {
+        System.out.println("Устанавливаем значение: " + text);
         lastNamefield.setValue(text);
     }
 }
