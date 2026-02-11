@@ -22,8 +22,10 @@ public class Main {
                 .setFirstName("Никита");
         InputFieldTest.setLastName("Еронин");
         InputFieldTest.setEmail("eronin.crm@yandex.ru");
+        InputFieldTest.setGender();
         InputFieldTest.setMobile("89504543762");
         InputFieldTest.setSubjects("Math, Biology, English, Geography");
+        InputFieldTest.setCurrentAddress("123 Main St Apt 4, New York, NY 10001, USA");
 
     }
 
