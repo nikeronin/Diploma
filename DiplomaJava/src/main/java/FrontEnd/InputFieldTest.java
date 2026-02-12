@@ -1,12 +1,9 @@
 package FrontEnd;
 
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
-
-import java.time.Duration;
 
 import static com.codeborne.selenide.Selenide.$;
 
@@ -22,7 +19,17 @@ public class InputFieldTest {
             $("label[for='gender-radio-3']")
     );
     public Mobile mobilefield = new Mobile($("#userNumber"));
+    public DateOfBirth dateOfbirthfield = new DateOfBirth(
+            $("#dateOfBirthInput"),
+            $(".react-datepicker__year-select"),
+            $(".react-datepicker__month-select")
+    );
     public Subjects subjectfield = new Subjects($("#subjectsInput"));
+    public Hobbies hobbiesField = new Hobbies(
+            $("label[for='hobbies-checkbox-1']"),
+            $("label[for='hobbies-checkbox-2']"),
+            $("label[for='hobbies-checkbox-3']")
+    );
     public CurrentAddress currentaddressfield = new CurrentAddress($("#currentAddress"));
 
     @Step("Открыть страницу demoqa")
@@ -67,10 +74,30 @@ public class InputFieldTest {
         return this;
     }
 
+    @Step("Ввести данные в поле Date of Birth")
+
+    public void pickDate() {
+        dateOfbirthfield.openDatePicker();
+        dateOfbirthfield.selectYear("1995");
+        dateOfbirthfield.selectMonth("December");
+        dateOfbirthfield.selectDay("5");
+    }
+
     @Step("Ввести данные в поле Subjects")
     public InputFieldTest setSubjects(String text) {
         subjectfield.click();  // Клик по нужному полю
         subjectfield.setValue(text);  // Ввод текста в то же поле
+        return this;
+    }
+
+    @Step("Выбрать Hobbies")
+    public InputFieldTest setHobbies() {
+        hobbiesField.sportsbox.click(); // Отметить чекбокс Sports
+        System.out.println("Отмечен чекбокс: Sports");
+        hobbiesField.readingbox.click(); // Отметить чекбокс Reading
+        System.out.println("Отмечен чекбокс: Reading");
+        hobbiesField.musicbox.click(); // Отметить чекбокс Music
+        System.out.println("Отмечен чекбокс: Music");
         return this;
     }
 
