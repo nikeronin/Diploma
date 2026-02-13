@@ -37,12 +37,6 @@ public class Main {
 
         InputFieldTest.setCurrentAddress("123 Main St Apt 4, New York, NY 10001, USA");
 
-//        try {
-//            Thread.sleep(10_000);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
-
     }
 
 }

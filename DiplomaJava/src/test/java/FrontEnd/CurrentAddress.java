@@ -17,7 +17,7 @@ public class CurrentAddress {
     }
 
     public void setValue(String text) {
-        System.out.println("Устанавливаем значение: " + text);
+        System.out.println("Устанавливаем адрес: " + text);
         currentaddressfield.setValue(text);
     }
 

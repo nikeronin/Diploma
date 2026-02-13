@@ -13,12 +13,8 @@ public class Picture {
         this.uploadbutton = uploadbutton_;
     }
 
-    public void click() {
-        uploadbutton.shouldBe(Condition.exist);
-        uploadbutton.click();
-    }
-
     public void uploadPicture(String filePath) {
+        System.out.println("Загружаем картинку: easter-celebration-with-dreamy-bunny.jpg");
         uploadbutton.uploadFromClasspath(filePath);
     }
 

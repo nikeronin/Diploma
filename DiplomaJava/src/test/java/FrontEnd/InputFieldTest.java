@@ -26,7 +26,9 @@ public class InputFieldTest {
             $("label[for='hobbies-checkbox-2']"),
             $("label[for='hobbies-checkbox-3']")
     );
-    public Picture uploadButton = new Picture ($("label[for='uploadPicture']"));
+    public Picture uploadButton = new Picture(
+            $(By.cssSelector("input[type='file'][id^='uploadPicture']"))
+    );
     public CurrentAddress currentaddressfield = new CurrentAddress($("#currentAddress"));
 
     @Step("Открыть страницу demoqa")
@@ -100,7 +102,6 @@ public class InputFieldTest {
 
     @Step ("Загрузить Picture")
     public InputFieldTest uploadbutton(String s) {
-        uploadButton.uploadbutton.click();
         uploadButton.uploadPicture("easter-celebration-with-dreamy-bunny.jpg");
         return this;
     };

@@ -17,7 +17,7 @@ public class Subjects {
     }
 
     public void setValue(String text) {
-        System.out.println("Устанавливаем значение: " + text);
+        System.out.println("Заполняем предметы: " + text);
         subjectfield.setValue(text);
     }
 
