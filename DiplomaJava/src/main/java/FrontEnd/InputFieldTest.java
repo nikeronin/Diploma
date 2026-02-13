@@ -26,6 +26,7 @@ public class InputFieldTest {
             $("label[for='hobbies-checkbox-2']"),
             $("label[for='hobbies-checkbox-3']")
     );
+    public Picture uploadButton = new Picture ($("label[for='uploadPicture']"));
     public CurrentAddress currentaddressfield = new CurrentAddress($("#currentAddress"));
 
     @Step("Открыть страницу demoqa")
@@ -96,6 +97,13 @@ public class InputFieldTest {
         System.out.println("Отмечен чекбокс: Music");
         return this;
     }
+
+    @Step ("Загрузить Picture")
+    public InputFieldTest uploadbutton(String s) {
+        uploadButton.uploadbutton.click();
+        uploadButton.uploadPicture("easter-celebration-with-dreamy-bunny.jpg");
+        return this;
+    };
 
     @Step("Ввести данные в поле Current Address")
     public InputFieldTest setCurrentAddress(String text) {

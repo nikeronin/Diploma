@@ -27,7 +27,21 @@ public class Main {
         InputFieldTest.setBirthdate();
         InputFieldTest.setSubjects("Math, Biology, English, Geography");
         InputFieldTest.setHobbies();
+        InputFieldTest.uploadbutton("easter-celebration-with-dreamy-bunny.jpg");
+
+        try {
+            Thread.sleep(10_000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
         InputFieldTest.setCurrentAddress("123 Main St Apt 4, New York, NY 10001, USA");
+
+//        try {
+//            Thread.sleep(10_000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
 
     }
 
