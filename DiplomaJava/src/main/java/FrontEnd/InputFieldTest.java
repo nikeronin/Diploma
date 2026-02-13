@@ -19,11 +19,7 @@ public class InputFieldTest {
             $("label[for='gender-radio-3']")
     );
     public Mobile mobilefield = new Mobile($("#userNumber"));
-    public DateOfBirth dateOfbirthfield = new DateOfBirth(
-            $("#dateOfBirthInput"),
-            $(".react-datepicker__year-select"),
-            $(".react-datepicker__month-select")
-    );
+    public DateOfBirth birthdate = new DateOfBirth();
     public Subjects subjectfield = new Subjects($("#subjectsInput"));
     public Hobbies hobbiesField = new Hobbies(
             $("label[for='hobbies-checkbox-1']"),
@@ -75,12 +71,12 @@ public class InputFieldTest {
     }
 
     @Step("Ввести данные в поле Date of Birth")
-
-    public void pickDate() {
-        dateOfbirthfield.openDatePicker();
-        dateOfbirthfield.selectYear("1995");
-        dateOfbirthfield.selectMonth("December");
-        dateOfbirthfield.selectDay("5");
+    public void setBirthdate() {
+        int year = 2001;
+        int month = 3;
+        int day = 15;
+        birthdate.input(year, month, day);
+        System.out.println("Заполнена дата рождения " + birthdate);
     }
 
     @Step("Ввести данные в поле Subjects")
