@@ -14,6 +14,7 @@ public class FirstName {
     public void click() {
         firstNamefield.shouldBe(Condition.exist);
         firstNamefield.click();
+
     }
 
     public void setValue(String text) {

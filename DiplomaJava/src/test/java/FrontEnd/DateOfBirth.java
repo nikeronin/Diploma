@@ -18,7 +18,7 @@ public class DateOfBirth {
 
     SelenideElement selectMonth = $(By.className("react-datepicker__month-select"));
     SelenideElement selectYear = $(By.className("react-datepicker__year-select"));
-    String inputDayTmp = "//div[contains(@class, 'react-datepicker__day') and @role='option' and text()='%s']";
+    String inputDayTmp = "//div[contains(@class, 'react-datepicker__day') and @role='gridcell' and text()='%s']";
 
     public void input(int year, int month, int day) {
         input.click();

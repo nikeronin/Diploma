@@ -5,6 +5,7 @@ import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 
+import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 
 public class InputFieldTest {
@@ -30,12 +31,20 @@ public class InputFieldTest {
             $(By.cssSelector("input[type='file'][id^='uploadPicture']"))
     );
     public CurrentAddress currentaddressfield = new CurrentAddress($("#currentAddress"));
+    public SelectState SelectState = new SelectState(
+            $("#react-select-3-input"),
+            $(byText("NCR"))
+    );
+    public SelectCity SelectCity = new SelectCity(
+            $("#react-select-4-input"),
+            $(byText("Delhi"))
+    );
 
-    @Step("Открыть страницу demoqa")
-    public InputFieldTest openPage() {
-        Selenide.open("https://demoqa.com/automation-practice-form");
-        return this;
-    }
+//    @Step("Открыть страницу demoqa")
+//    public InputFieldTest openPage() {
+//        Selenide.open("https://demoqa.com");
+//        return this;
+//    }
 
     @Step("Ввести данные в поле FirstName")
     public InputFieldTest setFirstName(String text) {
@@ -104,13 +113,27 @@ public class InputFieldTest {
     public InputFieldTest uploadbutton(String s) {
         uploadButton.uploadPicture("easter-celebration-with-dreamy-bunny.jpg");
         return this;
-    };
+    }
 
     @Step("Ввести данные в поле Current Address")
     public InputFieldTest setCurrentAddress(String text) {
         currentaddressfield.click();  // Клик по нужному полю
         currentaddressfield.setValue(text);  // Ввод текста в то же поле
         return this;
+    }
+
+    @Step("Выбрать значение в Select State")
+    public InputFieldTest SelectState() {
+        SelectState.selectstatefield.click();
+        SelectState.selectstatevariant.click();
+        return null;
+    }
+
+    @Step("Выбрать значение в Select City")
+    public InputFieldTest SelectCity() {
+        SelectCity.selectcityfield.click();
+        SelectCity.selectcityvariant.click();
+        return null;
     }
 
 }
