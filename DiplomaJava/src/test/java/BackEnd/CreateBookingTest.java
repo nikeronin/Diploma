@@ -24,7 +24,7 @@ public class CreateBookingTest {
         dates.setCheckout("2026-03-11");
 
         Booking booking = new Booking();
-        booking.setFirstname("Василий");
+        booking.setFirstname("Дмитрий");
         booking.setLastname("Иванов");
         booking.setTotalprice(1345);
         booking.setDepositpaid(true);
@@ -39,7 +39,7 @@ public class CreateBookingTest {
                 .then()
                 .log().all()
                 .statusCode(200)
-                .body("booking.firstname", equalTo("Василий"))
+                .body("booking.firstname", equalTo("Дмитрий"))
                 .body("booking.lastname", equalTo("Иванов"))
                 .body("booking.totalprice", equalTo(1345))
                 .body("booking.depositpaid", equalTo(true))

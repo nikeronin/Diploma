@@ -39,7 +39,7 @@ public class UpdateBookingWithTokenTest {
     @Severity(SeverityLevel.CRITICAL)
     @Step("Отправить PUT-запрос на обновление бронирования")
     public void testUpdateBooking_WithToken() {
-        int bookingId = 3318;
+        int bookingId = 3332;
 
         BookingDates dates = new BookingDates();
         dates.setCheckin("2026-04-01");
