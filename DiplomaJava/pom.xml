@@ -103,6 +103,13 @@
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                     </argLine>
+                    <includes>
+                        <include>**/*InputFieldTestAllFields.java</include>
+                        <include>**/*CreateBookingTest.java</include>
+                        <include>**/*UpdateBookingWithTokenTest.java</include>
+                        <include>**/*GetBookingTest.java</include>
+                        <include>**/*DeleteBookingWithTokenTest.java</include>
+                    </includes>
                 </configuration>
                 <dependencies>
                     <dependency>
