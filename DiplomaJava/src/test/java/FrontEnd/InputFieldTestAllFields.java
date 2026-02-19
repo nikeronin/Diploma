@@ -33,7 +33,7 @@ public class InputFieldTestAllFields {
 
     @AfterEach
     void attachScreenshot() {
-        takeScreenshot(); // Allure автоматически прикрепит скриншот
+        takeScreenshot();
     }
 
     @Test
@@ -86,47 +86,6 @@ public class InputFieldTestAllFields {
 
     @Step("Отправка формы")
     private void stepSubmitForm() {
-        // Здесь можно добавить проверку успешной отправки
-        // Например: assertThat(successMessage).isDisplayed();
+        // assertThat(successMessage).isDisplayed();
     }
 }
-
-
-
-//public class Main {
-//
-//    InputFieldTest InputFieldTest = new InputFieldTest();
-//    private DemoQAPage demoQAPage = new DemoQAPage();
-//
-//    @BeforeAll
-//    static void setupAllureReports() {
-//        SelenideLogger.addListener("AllureSelenide", new AllureSelenide()
-//                .screenshots(true)
-//        );
-//    }
-//
-//    @Test
-//    void autotest() {
-//        demoQAPage.openPage("https://demoqa.com/");
-//        demoQAPage.goToForms();
-//        demoQAPage.goToPracticeForm();
-////      InputFieldTest.openPage()
-//        InputFieldTest.setFirstName("Никита");
-//        InputFieldTest.setLastName("Еронин");
-//        InputFieldTest.setEmail("eronin.crm@yandex.ru");
-//        InputFieldTest.setGender();
-//        InputFieldTest.setMobile("89504543762");
-//        InputFieldTest.setBirthdate();
-//        InputFieldTest.setSubjects("Math, Biology, English, Geography");
-//        InputFieldTest.setHobbies();
-//        InputFieldTest.uploadbutton("easter-celebration-with-dreamy-bunny.jpg");
-//        InputFieldTest.setCurrentAddress("123 Main St Apt 4, New York, NY 10001, USA");
-//        InputFieldTest.SelectState();
-//        InputFieldTest.SelectCity();
-//        try {
-//            Thread.sleep(10_000);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
-//    }
-//}

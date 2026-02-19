@@ -1,6 +1,5 @@
 package FrontEnd;
 
-import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
@@ -11,40 +10,34 @@ import static com.codeborne.selenide.Selenide.$;
 public class InputFieldTest {
 
     SelenideElement TextInput = $(By.name("text"));
-    public FirstName firstNameField = new FirstName($("#firstName"));
-    public LastName lastNamefield = new LastName($("#lastName"));
-    public Email emailfield = new Email($("#userEmail"));
-    public Gender genderField = new Gender(
+    private final FirstName firstNameField = new FirstName($("#firstName"));
+    private final LastName lastNamefield = new LastName($("#lastName"));
+    private final Email emailfield = new Email($("#userEmail"));
+    private final Gender genderField = new Gender(
             $("label[for='gender-radio-1']"),
             $("label[for='gender-radio-2']"),
             $("label[for='gender-radio-3']")
     );
-    public Mobile mobilefield = new Mobile($("#userNumber"));
-    public DateOfBirth birthdate = new DateOfBirth();
-    public Subjects subjectfield = new Subjects($("#subjectsInput"));
-    public Hobbies hobbiesField = new Hobbies(
+    private final Mobile mobilefield = new Mobile($("#userNumber"));
+    private final DateOfBirth birthdate = new DateOfBirth();
+    private final Subjects subjectfield = new Subjects($("#subjectsInput"));
+    private final Hobbies hobbiesField = new Hobbies(
             $("label[for='hobbies-checkbox-1']"),
             $("label[for='hobbies-checkbox-2']"),
             $("label[for='hobbies-checkbox-3']")
     );
-    public Picture uploadButton = new Picture(
+    private final Picture uploadButton = new Picture(
             $(By.cssSelector("input[type='file'][id^='uploadPicture']"))
     );
-    public CurrentAddress currentaddressfield = new CurrentAddress($("#currentAddress"));
-    public SelectState SelectState = new SelectState(
+    private final CurrentAddress currentaddressfield = new CurrentAddress($("#currentAddress"));
+    private final SelectState SelectState = new SelectState(
             $("#react-select-3-input"),
             $(byText("NCR"))
     );
-    public SelectCity SelectCity = new SelectCity(
+    private final SelectCity SelectCity = new SelectCity(
             $("#react-select-4-input"),
             $(byText("Delhi"))
     );
-
-//    @Step("Открыть страницу demoqa")
-//    public InputFieldTest openPage() {
-//        Selenide.open("https://demoqa.com");
-//        return this;
-//    }
 
     @Step("Ввести данные в поле FirstName")
     public InputFieldTest setFirstName(String text) {
