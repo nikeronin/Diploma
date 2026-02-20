@@ -105,6 +105,8 @@
                     </argLine>
                     <includes>
                         <include>**/*InputFieldTestAllFields.java</include>
+                        <include>**/*InputRequiredFieldsOnlyTest.java</include>
+                        <include>**/*InputFieldsValidationTest.java</include>
                         <include>**/*CreateBookingTest.java</include>
                         <include>**/*UpdateBookingWithTokenTest.java</include>
                         <include>**/*GetBookingTest.java</include>

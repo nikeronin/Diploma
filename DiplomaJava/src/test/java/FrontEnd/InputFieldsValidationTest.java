@@ -11,14 +11,13 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.OutputType;
 
-
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 
 
 @Epic("Демо-форма")
-@Feature("Заполнение Practice Form все поля на demoqa.com")
-public class InputFieldTestAllFields {
+@Feature("Заполнение Practice Form без обязательных полей на demoqa.com")
+public class InputFieldsValidationTest {
 
     InputFieldTest inputFieldTest = new InputFieldTest();
     private DemoQAPage demoQAPage = new DemoQAPage();
@@ -71,12 +70,12 @@ public class InputFieldTestAllFields {
 
     @Step("Заполнение персональных данных")
     private void stepFillPersonalInfo() {
-        inputFieldTest.setFirstName("Никита");
-        inputFieldTest.setLastName("Еронин");
+//        inputFieldTest.setFirstName("Никита");
+//        inputFieldTest.setLastName("Еронин");
         inputFieldTest.setEmail("eronin.crm@yandex.ru");
-        inputFieldTest.setGender();
-        inputFieldTest.setMobile("89504543762");
-        inputFieldTest.setBirthdate();
+//        inputFieldTest.setGender();
+//        inputFieldTest.setMobile("89504543762");
+//        inputFieldTest.setBirthdate();
         inputFieldTest.setSubjects("Math, Biology, English, Geography");
         inputFieldTest.setHobbies();
         inputFieldTest.setCurrentAddress("123 Main St Apt 4, New York, NY 10001, USA");
@@ -92,7 +91,7 @@ public class InputFieldTestAllFields {
     @Step("Отправка формы")
     private void stepSubmitForm() {
         $("#submit").click();
-        $(byText("Thanks for submitting the form")).shouldBe(Condition.visible);
+        $(byText("Thanks for submitting the form")).shouldNotBe(Condition.visible);
     }
 
 }
