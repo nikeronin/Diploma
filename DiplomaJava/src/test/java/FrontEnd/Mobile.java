@@ -18,10 +18,10 @@ public class Mobile {
 
     public void setValue(String value) {
         System.out.println("Устанавливаем значение: " + value);
-        if (value == null || value.isEmpty()) {
-            throw new IllegalArgumentException("Значение не может быть пустым");
-        }
+        mobilefield.shouldBe(Condition.exist, Condition.visible, Condition.enabled);
         mobilefield.setValue(value);
+        mobilefield.shouldHave(Condition.value(value));
+        System.out.println("Значение '" + value + "' успешно установлено в поле Mobile");
     }
 
 }

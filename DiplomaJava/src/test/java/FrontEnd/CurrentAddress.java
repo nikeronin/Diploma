@@ -18,7 +18,10 @@ public class CurrentAddress {
 
     public void setValue(String text) {
         System.out.println("Устанавливаем адрес: " + text);
+        currentaddressfield.shouldBe(Condition.exist, Condition.visible, Condition.enabled);
         currentaddressfield.setValue(text);
+        currentaddressfield.shouldHave(Condition.value(text));
+        System.out.println("Значение '" + text + "' успешно установлено в поле Current Address");
     }
 
 }

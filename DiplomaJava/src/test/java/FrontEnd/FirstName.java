@@ -19,6 +19,9 @@ public class FirstName {
 
     public void setValue(String text) {
         System.out.println("Устанавливаем значение: " + text);
+        firstNamefield.shouldBe(Condition.exist, Condition.visible, Condition.enabled);
         firstNamefield.setValue(text);
+        firstNamefield.shouldHave(Condition.value(text));
+        System.out.println("Значение '" + text + "' успешно установлено в поле First Name");
     }
 }

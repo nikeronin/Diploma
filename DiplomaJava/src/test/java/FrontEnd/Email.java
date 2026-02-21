@@ -18,7 +18,10 @@ public class Email {
 
     public void setValue(String text) {
         System.out.println("Устанавливаем значение: " + text);
+        emailfield.shouldBe(Condition.exist, Condition.visible, Condition.enabled);
         emailfield.setValue(text);
+        emailfield.shouldHave(Condition.value(text));
+        System.out.println("Значение '" + text + "' успешно установлено в поле Email");
     }
 
 }

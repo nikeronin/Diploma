@@ -75,7 +75,7 @@ public class InputFieldTestAllFields {
         inputFieldTest.setLastName("Еронин");
         inputFieldTest.setEmail("eronin.crm@yandex.ru");
         inputFieldTest.setGender();
-        inputFieldTest.setMobile("89504543762");
+        inputFieldTest.setMobile("8950454376");
         inputFieldTest.setBirthdate();
         inputFieldTest.setSubjects("Math, Biology, English, Geography");
         inputFieldTest.setHobbies();

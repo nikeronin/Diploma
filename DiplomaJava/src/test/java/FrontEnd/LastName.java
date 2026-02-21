@@ -18,6 +18,9 @@ public class LastName {
 
     public void setValue(String text) {
         System.out.println("Устанавливаем значение: " + text);
+        lastNamefield.shouldBe(Condition.exist, Condition.visible, Condition.enabled);
         lastNamefield.setValue(text);
+        lastNamefield.shouldHave(Condition.value(text));
+        System.out.println("Значение '" + text + "' успешно установлено в поле Last Name");
     }
 }
