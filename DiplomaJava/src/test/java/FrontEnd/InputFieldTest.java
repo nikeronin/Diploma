@@ -1,15 +1,17 @@
 package FrontEnd;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
+
+import java.time.Duration;
 
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 
 public class InputFieldTest {
 
-    SelenideElement TextInput = $(By.name("text"));
     private final FirstName firstNameField = new FirstName($("#firstName"));
     private final LastName lastNamefield = new LastName($("#lastName"));
     private final Email emailfield = new Email($("#userEmail"));
@@ -30,6 +32,7 @@ public class InputFieldTest {
             $(By.cssSelector("input[type='file'][id^='uploadPicture']"))
     );
     private final CurrentAddress currentaddressfield = new CurrentAddress($("#currentAddress"));
+
     private final SelectState SelectState = new SelectState(
             $("#react-select-3-input"),
             $(byText("NCR"))
@@ -41,22 +44,22 @@ public class InputFieldTest {
 
     @Step("Ввести данные в поле FirstName")
     public InputFieldTest setFirstName(String text) {
-        firstNameField.click();  // Клик по нужному полю
-        firstNameField.setValue(text);  // Ввод текста в то же поле
+        firstNameField.click();
+        firstNameField.setValue(text);
         return this;
     }
 
     @Step("Ввести данные в поле LastName")
     public InputFieldTest setLastName(String text) {
-        lastNamefield.click();  // Клик по нужному полю
-        lastNamefield.setValue(text);  // Ввод текста в то же поле
+        lastNamefield.click();
+        lastNamefield.setValue(text);
         return this;
     }
 
     @Step("Ввести данные в поле Email")
     public InputFieldTest setEmail(String text) {
-        emailfield.click();  // Клик по нужному полю
-        emailfield.setValue(text);  // Ввод текста в то же поле
+        emailfield.click();
+        emailfield.setValue(text);
         return this;
     }
 
@@ -70,8 +73,8 @@ public class InputFieldTest {
 
     @Step("Ввести данные в поле Mobile")
     public InputFieldTest setMobile(String value) {
-        mobilefield.click();  // Клик по нужному полю
-        mobilefield.setValue(value);  // Ввод текста в то же поле
+        mobilefield.click();
+        mobilefield.setValue(value);
         return this;
     }
 
@@ -86,8 +89,8 @@ public class InputFieldTest {
 
     @Step("Ввести данные в поле Subjects")
     public InputFieldTest setSubjects(String text) {
-        subjectfield.click();  // Клик по нужному полю
-        subjectfield.setValue(text);  // Ввод текста в то же поле
+        subjectfield.click();
+        subjectfield.setValue(text);
         return this;
     }
 
@@ -110,23 +113,52 @@ public class InputFieldTest {
 
     @Step("Ввести данные в поле Current Address")
     public InputFieldTest setCurrentAddress(String text) {
-        currentaddressfield.click();  // Клик по нужному полю
-        currentaddressfield.setValue(text);  // Ввод текста в то же поле
+        currentaddressfield.click();
+        currentaddressfield.setValue(text);
         return this;
     }
 
     @Step("Выбрать значение в Select State")
     public InputFieldTest SelectState() {
-        SelectState.selectstatefield.click();
-        SelectState.selectstatevariant.click();
-        return null;
+        System.out.println("Выбираем значение 'NCR' в поле Select State");
+
+        try {
+            SelectState.selectstatefield.shouldBe(Condition.exist, Condition.visible, Condition.enabled)
+                    .click();
+            SelectState.selectstatevariant.shouldBe(Condition.exist, Condition.visible, Condition.enabled)
+                    .click();
+            SelenideElement selectedValueElement = $(".css-1dimb5e-singleValue");
+            selectedValueElement.shouldBe(Condition.visible, Duration.ofSeconds(3));
+            selectedValueElement.shouldHave(Condition.text("NCR"), Duration.ofSeconds(5));
+
+            System.out.println("Значение 'NCR' успешно выбрано и отображено в поле Select State");
+            return this;
+
+        } catch (Exception e) {
+            System.err.println("Ошибка при выборе значения 'NCR' в поле Select State: " + e.getMessage());
+            throw new RuntimeException("Не удалось выбрать значение 'NCR' в поле Select State", e);
+        }
     }
 
     @Step("Выбрать значение в Select City")
     public InputFieldTest SelectCity() {
-        SelectCity.selectcityfield.click();
-        SelectCity.selectcityvariant.click();
-        return null;
+        System.out.println("Выбираем значение 'Delhi' в поле Select City");
+
+        try {
+            SelectCity.selectcityfield.shouldBe(Condition.exist, Condition.visible, Condition.enabled)
+                    .click();
+            SelectCity.selectcityvariant.shouldBe(Condition.exist, Condition.visible, Condition.enabled)
+                    .click();
+            SelenideElement selectedValueElement = $("#city .css-1dimb5e-singleValue");
+            selectedValueElement.shouldBe(Condition.visible, Duration.ofSeconds(3));
+            selectedValueElement.shouldHave(Condition.text("Delhi"), Duration.ofSeconds(5));
+            System.out.println("Значение 'Delhi' успешно выбрано и отображено в поле Select City");
+            return this;
+
+        } catch (Exception e) {
+            System.err.println("Ошибка при выборе значения 'Delhi' в поле Select City: " + e.getMessage());
+            throw new RuntimeException("Не удалось выбрать значение 'Delhi' в поле Select City", e);
+        }
     }
 
 }

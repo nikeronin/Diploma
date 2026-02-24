@@ -11,7 +11,6 @@ public class SelectState {
     SelenideElement selectstatefield;
     SelenideElement selectstatevariant;
 
-
     public SelectState (SelenideElement selectstatefield_, SelenideElement selectstatevariant_) {
         this.selectstatefield = selectstatefield_;
         this.selectstatevariant = selectstatevariant_;
