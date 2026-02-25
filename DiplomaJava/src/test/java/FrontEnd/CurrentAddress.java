@@ -17,10 +17,21 @@ public class CurrentAddress {
     }
 
     public void setValue(String text) {
-        System.out.println("Устанавливаем адрес: " + text);
+        System.out.println("Устанавливаем значение: " + text);
+
         currentaddressfield.shouldBe(Condition.exist, Condition.visible, Condition.enabled);
+        currentaddressfield.clear();
         currentaddressfield.setValue(text);
-        currentaddressfield.shouldHave(Condition.value(text));
+
+        String actualValue = currentaddressfield.getValue();
+
+        if (!actualValue.equals(text)) {
+            throw new RuntimeException(String.format(
+                    "Значение не было установлено корректно. Ожидалось: '%s', фактически: '%s'",
+                    text, actualValue
+            ));
+        }
+
         System.out.println("Значение '" + text + "' успешно установлено в поле Current Address");
     }
 

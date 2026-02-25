@@ -18,9 +18,20 @@ public class LastName {
 
     public void setValue(String text) {
         System.out.println("Устанавливаем значение: " + text);
+
         lastNamefield.shouldBe(Condition.exist, Condition.visible, Condition.enabled);
+        lastNamefield.clear();
         lastNamefield.setValue(text);
-        lastNamefield.shouldHave(Condition.value(text));
+
+        String actualValue = lastNamefield.getValue();
+
+        if (!actualValue.equals(text)) {
+            throw new RuntimeException(String.format(
+                    "Значение не было установлено корректно. Ожидалось: '%s', фактически: '%s'",
+                    text, actualValue
+            ));
+        }
+
         System.out.println("Значение '" + text + "' успешно установлено в поле Last Name");
     }
 }
