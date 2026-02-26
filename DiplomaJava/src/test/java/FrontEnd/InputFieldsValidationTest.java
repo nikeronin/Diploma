@@ -41,8 +41,8 @@ public class InputFieldsValidationTest {
     }
 
     @Test
-    @DisplayName("Автотест: заполнение Practice Form")
-    @Description("Проверяет заполнение всех полей формы и отправку данных")
+    @DisplayName("Проверка валидации обязательных полей Practice Form")
+    @Description("Проверяет валидацию заполнения обязательных полей")
     @Severity(SeverityLevel.CRITICAL)
     void autotest() {
         stepOpenPage();
@@ -70,12 +70,7 @@ public class InputFieldsValidationTest {
 
     @Step("Заполнение персональных данных")
     private void stepFillPersonalInfo() {
-//        inputFieldTest.setFirstName("Никита");
-//        inputFieldTest.setLastName("Еронин");
         inputFieldTest.setEmail("eronin.crm@yandex.ru");
-//        inputFieldTest.setGender();
-//        inputFieldTest.setMobile("89504543762");
-//        inputFieldTest.setBirthdate();
         inputFieldTest.setSubjects("Math, Biology, English, Geography");
         inputFieldTest.setHobbies();
         inputFieldTest.setCurrentAddress("123 Main St Apt 4, New York, NY 10001, USA");

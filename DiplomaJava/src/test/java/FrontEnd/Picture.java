@@ -1,9 +1,7 @@
 package FrontEnd;
 
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 
-import java.io.File;
 
 public class Picture {
 

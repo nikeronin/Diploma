@@ -40,8 +40,8 @@ public class InputRequiredFieldsOnlyTest {
     }
 
     @Test
-    @DisplayName("Автотест: заполнение Practice Form")
-    @Description("Проверяет заполнение всех полей формы и отправку данных")
+    @DisplayName("Проверка заполнения только обязательных полей Practice Form")
+    @Description("Проверяет заполнение только обязательных полей формы и отправку данных")
     @Severity(SeverityLevel.CRITICAL)
     void autotest() {
         stepOpenPage();
